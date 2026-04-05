@@ -1,106 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign In — SafeSpace</title>
-  <link rel="stylesheet" href="../styles/main.css" />
-</head>
-<body class="login-page">
-
-  <!-- ── Navbar ── -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🛡</div>
-        SafeSpace
-      </a>
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="stories.html">Success Stories</a>
-        <a href="report.html">Report Incident</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ── Login ── -->
-  <div class="login-bg">
-    <div class="login-box fade-in">
-      <div class="login-card">
-
-        <div class="login-logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In — SafesSpeak</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body class="login-page">
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
           <div class="logo-icon">🛡</div>
-          SafeSpace
+          SafesSpeak
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="mission.html">Our Mission</a>
+          <a href="stories.html">Success Stories</a>
+          <a href="report.html">Report Incident</a>
         </div>
-        <p style="text-align:center; font-size:0.82rem; color:var(--text-light); margin-top:4px;">Your safe, anonymous reporting platform</p>
+      </div>
+    </nav>
 
-        <h2 style="margin-top:28px;">Welcome back</h2>
-        <p>Sign in to your account to report an incident or share your story.</p>
+    <!-- ── Login ── -->
+    <div class="login-bg">
+      <div class="login-box fade-in">
+        <div class="login-card">
+          <div class="login-logo">
+            <div class="logo-icon">🛡</div>
+            SafesSpeak
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-size: 0.82rem;
+              color: var(--text-light);
+              margin-top: 4px;
+            "
+          >
+            Your safe, anonymous reporting platform
+          </p>
 
-        <div class="form-group" style="margin-top:24px;">
-          <label for="email">School Email <span class="req">*</span></label>
-          <input
-            type="email"
-            id="email"
-            class="form-control"
-            placeholder="you@school.edu"
-            autocomplete="email"
-          />
-        </div>
+          <h2 style="margin-top: 28px">Welcome back</h2>
+          <p>
+            Sign in to your account to report an incident or share your story.
+          </p>
 
-        <div class="form-group">
-          <label for="password">Password <span class="req">*</span></label>
-          <div class="password-wrapper">
+          <div class="form-group" style="margin-top: 24px">
+            <label for="email">School Email <span class="req">*</span></label>
             <input
-              type="password"
-              id="password"
+              type="email"
+              id="email"
               class="form-control"
-              placeholder="Enter your password"
-              autocomplete="current-password"
+              placeholder="you@school.edu"
+              autocomplete="email"
             />
-            <button class="toggle-pw" onclick="togglePw()" type="button" aria-label="Show password">👁</button>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password <span class="req">*</span></label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+              <button
+                class="toggle-pw"
+                onclick="togglePw()"
+                type="button"
+                aria-label="Show password"
+              >
+                👁
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" /> Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <a href="report.html" class="btn btn-primary btn-full btn-lg"
+            >Sign In</a
+          >
+
+          <div class="divider"><span>or</span></div>
+
+          <a href="report.html" class="btn btn-secondary btn-full">
+            🏫 Continue with School SSO
+          </a>
+
+          <p class="login-footer">
+            Don't have an account? <a href="#">Create one free</a>
+          </p>
+
+          <div class="anon-notice" style="margin-top: 24px; margin-bottom: 0">
+            <div class="anon-icon">🔒</div>
+            <p class="anon-text">
+              <strong>Your privacy is protected.</strong> Your login is only
+              used to prevent duplicate reports. All submitted reports are
+              forwarded to administration anonymously.
+            </p>
           </div>
         </div>
 
-        <div class="form-options">
-          <label class="remember">
-            <input type="checkbox" /> Remember me
-          </label>
-          <a href="#" class="forgot-link">Forgot password?</a>
-        </div>
-
-        <a href="report.html" class="btn btn-primary btn-full btn-lg">Sign In</a>
-
-        <div class="divider"><span>or</span></div>
-
-        <a href="report.html" class="btn btn-secondary btn-full">
-          🏫 Continue with School SSO
-        </a>
-
-        <p class="login-footer">
-          Don't have an account? <a href="#">Create one free</a>
+        <p class="privacy-note">
+          🔐 Secured & confidential — school administration never sees your
+          identity
         </p>
-
-        <div class="anon-notice" style="margin-top:24px; margin-bottom:0;">
-          <div class="anon-icon">🔒</div>
-          <p class="anon-text">
-            <strong>Your privacy is protected.</strong> Your login is only used to prevent duplicate reports. All submitted reports are forwarded to administration anonymously.
-          </p>
-        </div>
-
       </div>
-
-      <p class="privacy-note">🔐 Secured & confidential — school administration never sees your identity</p>
     </div>
-  </div>
 
-  <script>
-    function togglePw() {
-      const pw = document.getElementById('password');
-      pw.type = pw.type === 'password' ? 'text' : 'password';
-    }
-  </script>
-
-</body>
+    <script>
+      function togglePw() {
+        const pw = document.getElementById("password");
+        pw.type = pw.type === "password" ? "text" : "password";
+      }
+    </script>
+  </body>
 </html>

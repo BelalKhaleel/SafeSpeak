@@ -1,268 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Report an Incident — SafeSpace</title>
-  <link rel="stylesheet" href="../styles/main.css" />
-</head>
-<body>
-
-  <!-- ── Navbar ── -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🛡</div>
-        SafeSpace
-      </a>
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="stories.html">Success Stories</a>
-        <a href="report.html" class="active">Report Incident</a>
-        <a href="login.html" class="nav-cta">Sign In</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report an Incident — SafesSpeak</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body>
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <div class="logo-icon">🛡</div>
+          SafesSpeak
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="mission.html">Our Mission</a>
+          <a href="stories.html">Success Stories</a>
+          <a href="report.html" class="active">Report Incident</a>
+          <a href="login.html" class="nav-cta">Sign In</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- ── Page Header ── -->
-  <div class="page-header">
-    <div class="container">
-      <span class="section-label">Confidential Report</span>
-      <h1>Report a Bullying Incident</h1>
-      <p>All information you provide is handled with care and forwarded to your school administration anonymously. You are making a difference.</p>
-    </div>
-  </div>
-
-  <!-- ── Form ── -->
-  <div class="form-page" style="background: var(--off-white); padding-top:0;">
-    <div class="form-wrapper">
-
-      <!-- Anonymous Notice -->
-      <div class="anon-notice fade-in" style="margin-bottom:32px;">
-        <div class="anon-icon">🔒</div>
-        <p class="anon-text">
-          <strong>This report is 100% anonymous.</strong> Your name and account details will never appear in the report. The school administration will only receive the information you provide below.
+    <!-- ── Page Header ── -->
+    <div class="page-header">
+      <div class="container">
+        <span class="section-label">Confidential Report</span>
+        <h1>Report a Bullying Incident</h1>
+        <p>
+          All information you provide is handled with care and forwarded to your
+          school administration anonymously. You are making a difference.
         </p>
       </div>
+    </div>
 
-      <div class="form-card fade-in delay-1">
-
-        <!-- Section 1: Who was involved -->
-        <div style="margin-bottom:32px;">
-          <div class="tag tag-navy" style="margin-bottom:20px;">👥 People Involved</div>
-
-          <div class="form-group">
-            <label for="who-was-bullied">Name of the person who was bullied <span class="req">*</span></label>
-            <input
-              type="text"
-              id="who-was-bullied"
-              class="form-control"
-              placeholder="Enter their full name or nickname"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="who-bullied">Name of the person who did the bullying <span class="req">*</span></label>
-            <input
-              type="text"
-              id="who-bullied"
-              class="form-control"
-              placeholder="Enter their full name or nickname (if known)"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="relationship">Relationship to victim</label>
-            <select id="relationship" class="form-control">
-              <option value="" disabled selected>Select your relationship to the victim</option>
-              <option value="self">This happened to me</option>
-              <option value="friend">A friend</option>
-              <option value="classmate">A classmate</option>
-              <option value="sibling">A sibling</option>
-              <option value="other">Someone else</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Section 2: Type of Bullying -->
-        <div style="margin-bottom:32px;">
-          <div class="tag tag-coral" style="margin-bottom:20px;">🏷 Type of Bullying</div>
-          <p style="font-size:0.88rem; margin-bottom:16px;">Select all that apply <span class="req">*</span></p>
-
-          <div class="checkbox-group" id="bullying-types">
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="harassment" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">💬</span>
-              <span class="checkbox-label">Harassment — hurtful or threatening messages</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="exclusion" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">😶</span>
-              <span class="checkbox-label">Exclusion — being deliberately left out of groups</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="impersonation" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">🎭</span>
-              <span class="checkbox-label">Impersonation — fake profiles or identity theft</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="sharing" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">📸</span>
-              <span class="checkbox-label">Sharing without consent — private images or messages</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="flaming" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">🔥</span>
-              <span class="checkbox-label">Flaming — hostile or offensive public posts</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="stalking" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">🧟</span>
-              <span class="checkbox-label">Cyberstalking — repeated unwanted contact online</span>
-            </label>
-            <label class="checkbox-item" onclick="toggleCheck(this)">
-              <input type="checkbox" value="other" />
-              <div class="checkmark"></div>
-              <span class="checkbox-icon">❓</span>
-              <span class="checkbox-label">Other type of bullying</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Section 3: When & Where -->
-        <div style="margin-bottom:32px;">
-          <div class="tag tag-amber" style="margin-bottom:20px;">📅 When & Where</div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="incident-date">Date of incident <span class="req">*</span></label>
-              <input
-                type="date"
-                id="incident-date"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="platform">Platform / Where it happened</label>
-              <select id="platform" class="form-control">
-                <option value="" disabled selected>Select a platform</option>
-                <option>Instagram</option>
-                <option>Snapchat</option>
-                <option>WhatsApp</option>
-                <option>TikTok</option>
-                <option>Discord</option>
-                <option>Twitter / X</option>
-                <option>Online gaming</option>
-                <option>Text / SMS</option>
-                <option>Email</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 4: Description -->
-        <div style="margin-bottom:32px;">
-          <div class="tag tag-teal" style="margin-bottom:20px;">📝 Details</div>
-
-          <div class="form-group">
-            <label for="description">Describe what happened <span class="req">*</span></label>
-            <textarea
-              id="description"
-              class="form-control"
-              style="min-height:140px;"
-              placeholder="Please describe the incident in as much detail as you feel comfortable sharing. Include what was said or done, how often it has happened, and how it has affected the person involved."
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="evidence">Evidence or proof (optional)</label>
-            <input
-              type="text"
-              id="evidence"
-              class="form-control"
-              placeholder="E.g. screenshots saved, post links, or describe the evidence you have"
-            />
-          </div>
-        </div>
-
-        <!-- Anonymous Confirmation -->
-        <div class="anon-notice" style="margin-bottom:28px;">
-          <div class="anon-icon">📨</div>
+    <!-- ── Form ── -->
+    <div class="form-page" style="background: var(--off-white); padding-top: 0">
+      <div class="form-wrapper">
+        <!-- Anonymous Notice -->
+        <div class="anon-notice fade-in" style="margin-bottom: 32px">
+          <div class="anon-icon">🔒</div>
           <p class="anon-text">
-            <strong>Your report will be sent anonymously to school administration.</strong> They will review it and take appropriate action. You will not be identified in this process.
+            <strong>This report is 100% anonymous.</strong> Your name and
+            account details will never appear in the report. The school
+            administration will only receive the information you provide below.
           </p>
         </div>
 
-        <button class="btn btn-primary btn-full btn-lg" onclick="submitReport()">
-          Submit Report Anonymously
-        </button>
+        <div class="form-card fade-in delay-1">
+          <!-- Section 1: Who was involved -->
+          <div style="margin-bottom: 32px">
+            <div class="tag tag-navy" style="margin-bottom: 20px">
+              👥 People Involved
+            </div>
 
-        <p style="text-align:center; font-size:0.82rem; color:var(--text-light); margin-top:16px;">
-          Having second thoughts? You can also <a href="mission.html" style="color:var(--teal); font-weight:600;">learn more about our process</a> first.
+            <div class="form-group">
+              <label for="who-was-bullied"
+                >Name of the person who was bullied
+                <span class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="who-was-bullied"
+                class="form-control"
+                placeholder="Enter their full name or nickname"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="who-bullied"
+                >Name of the person who did the bullying
+                <span class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="who-bullied"
+                class="form-control"
+                placeholder="Enter their full name or nickname (if known)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="relationship">Relationship to victim</label>
+              <select id="relationship" class="form-control">
+                <option value="" disabled selected>
+                  Select your relationship to the victim
+                </option>
+                <option value="self">This happened to me</option>
+                <option value="friend">A friend</option>
+                <option value="classmate">A classmate</option>
+                <option value="sibling">A sibling</option>
+                <option value="other">Someone else</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 2: Type of Bullying -->
+          <div style="margin-bottom: 32px">
+            <div class="tag tag-coral" style="margin-bottom: 20px">
+              🏷 Type of Bullying
+            </div>
+            <p style="font-size: 0.88rem; margin-bottom: 16px">
+              Select all that apply <span class="req">*</span>
+            </p>
+
+            <div class="checkbox-group" id="bullying-types">
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="harassment" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">💬</span>
+                <span class="checkbox-label"
+                  >Harassment — hurtful or threatening messages</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="exclusion" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">😶</span>
+                <span class="checkbox-label"
+                  >Exclusion — being deliberately left out of groups</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="impersonation" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">🎭</span>
+                <span class="checkbox-label"
+                  >Impersonation — fake profiles or identity theft</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="sharing" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">📸</span>
+                <span class="checkbox-label"
+                  >Sharing without consent — private images or messages</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="flaming" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">🔥</span>
+                <span class="checkbox-label"
+                  >Flaming — hostile or offensive public posts</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="stalking" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">🧟</span>
+                <span class="checkbox-label"
+                  >Cyberstalking — repeated unwanted contact online</span
+                >
+              </label>
+              <label class="checkbox-item" onclick="toggleCheck(this)">
+                <input type="checkbox" value="other" />
+                <div class="checkmark"></div>
+                <span class="checkbox-icon">❓</span>
+                <span class="checkbox-label">Other type of bullying</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section 3: When & Where -->
+          <div style="margin-bottom: 32px">
+            <div class="tag tag-amber" style="margin-bottom: 20px">
+              📅 When & Where
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="incident-date"
+                  >Date of incident <span class="req">*</span></label
+                >
+                <input type="date" id="incident-date" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="platform">Platform / Where it happened</label>
+                <select id="platform" class="form-control">
+                  <option value="" disabled selected>Select a platform</option>
+                  <option>Instagram</option>
+                  <option>Snapchat</option>
+                  <option>WhatsApp</option>
+                  <option>TikTok</option>
+                  <option>Discord</option>
+                  <option>Twitter / X</option>
+                  <option>Online gaming</option>
+                  <option>Text / SMS</option>
+                  <option>Email</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Description -->
+          <div style="margin-bottom: 32px">
+            <div class="tag tag-teal" style="margin-bottom: 20px">
+              📝 Details
+            </div>
+
+            <div class="form-group">
+              <label for="description"
+                >Describe what happened <span class="req">*</span></label
+              >
+              <textarea
+                id="description"
+                class="form-control"
+                style="min-height: 140px"
+                placeholder="Please describe the incident in as much detail as you feel comfortable sharing. Include what was said or done, how often it has happened, and how it has affected the person involved."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="evidence">Evidence or proof (optional)</label>
+              <input
+                type="text"
+                id="evidence"
+                class="form-control"
+                placeholder="E.g. screenshots saved, post links, or describe the evidence you have"
+              />
+            </div>
+          </div>
+
+          <!-- Anonymous Confirmation -->
+          <div class="anon-notice" style="margin-bottom: 28px">
+            <div class="anon-icon">📨</div>
+            <p class="anon-text">
+              <strong
+                >Your report will be sent anonymously to school
+                administration.</strong
+              >
+              They will review it and take appropriate action. You will not be
+              identified in this process.
+            </p>
+          </div>
+
+          <button
+            class="btn btn-primary btn-full btn-lg"
+            onclick="submitReport()"
+          >
+            Submit Report Anonymously
+          </button>
+
+          <p
+            style="
+              text-align: center;
+              font-size: 0.82rem;
+              color: var(--text-light);
+              margin-top: 16px;
+            "
+          >
+            Having second thoughts? You can also
+            <a href="mission.html" style="color: var(--teal); font-weight: 600"
+              >learn more about our process</a
+            >
+            first.
+          </p>
+        </div>
+
+        <!-- Success State (hidden) -->
+        <div id="success-msg" style="display: none" class="success-banner">
+          <div class="success-icon">✅</div>
+          <h3>Report Submitted Successfully</h3>
+          <p>
+            Your report has been received and forwarded anonymously to your
+            school administration. They will review it within 24 hours. Thank
+            you for making your school safer.
+          </p>
+          <a
+            href="../index.html"
+            class="btn btn-primary"
+            style="margin-top: 20px"
+            >Back to Home</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-logo">
+          <div
+            class="logo-icon"
+            style="width: 28px; height: 28px; font-size: 14px"
+          >
+            🛡
+          </div>
+          SafesSpeak
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="mission.html">Our Mission</a>
+          <a href="stories.html">Success Stories</a>
+          <a href="login.html">Sign In</a>
+        </div>
+        <p class="footer-copy">
+          © 2026 SafesSpeak. All reports are anonymous and handled with care.
         </p>
-
       </div>
+    </footer>
 
-      <!-- Success State (hidden) -->
-      <div id="success-msg" style="display:none;" class="success-banner">
-        <div class="success-icon">✅</div>
-        <h3>Report Submitted Successfully</h3>
-        <p>Your report has been received and forwarded anonymously to your school administration. They will review it within 24 hours. Thank you for making your school safer.</p>
-        <a href="../index.html" class="btn btn-primary" style="margin-top:20px;">Back to Home</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── Footer ── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">
-        <div class="logo-icon" style="width:28px;height:28px;font-size:14px;">🛡</div>
-        SafeSpace
-      </div>
-      <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="stories.html">Success Stories</a>
-        <a href="login.html">Sign In</a>
-      </div>
-      <p class="footer-copy">© 2025 SafeSpace. All reports are anonymous and handled with care.</p>
-    </div>
-  </footer>
-
-  <script>
-    function toggleCheck(label) {
-      label.classList.toggle('checked');
-      const cb = label.querySelector('input[type="checkbox"]');
-      const mark = label.querySelector('.checkmark');
-      if (label.classList.contains('checked')) {
-        cb.checked = true;
-        mark.innerHTML = '✓';
-      } else {
-        cb.checked = false;
-        mark.innerHTML = '';
+    <script>
+      function toggleCheck(label) {
+        label.classList.toggle("checked");
+        const cb = label.querySelector('input[type="checkbox"]');
+        const mark = label.querySelector(".checkmark");
+        if (label.classList.contains("checked")) {
+          cb.checked = true;
+          mark.innerHTML = "✓";
+        } else {
+          cb.checked = false;
+          mark.innerHTML = "";
+        }
       }
-    }
 
-    function submitReport() {
-      const form   = document.querySelector('.form-card');
-      const notice = document.querySelector('.anon-notice');
-      const success = document.getElementById('success-msg');
-      form.style.display   = 'none';
-      notice.style.display = 'none';
-      success.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-
-</body>
+      function submitReport() {
+        const form = document.querySelector(".form-card");
+        const notice = document.querySelector(".anon-notice");
+        const success = document.getElementById("success-msg");
+        form.style.display = "none";
+        notice.style.display = "none";
+        success.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
 </html>
